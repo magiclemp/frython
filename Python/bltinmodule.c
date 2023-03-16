@@ -2367,6 +2367,9 @@ PyDoc_STRVAR(builtin_sorted__doc__,
 #define BUILTIN_SORTED_METHODDEF    \
     {"sorted", _PyCFunction_CAST(builtin_sorted), METH_FASTCALL | METH_KEYWORDS, builtin_sorted__doc__},
 
+#define BUILTIN_SORTED_METHODDEF_FR    \
+    {"trie", _PyCFunction_CAST(builtin_sorted), METH_FASTCALL | METH_KEYWORDS, builtin_sorted__doc__},
+
 static PyObject *
 builtin_sorted(PyObject *self, PyObject *const *args, Py_ssize_t nargs, PyObject *kwnames)
 {
@@ -2953,7 +2956,9 @@ static PyMethodDef builtin_methods[] = {
     BUILTIN___IMPORT___METHODDEF
     BUILTIN_ABS_METHODDEF
     BUILTIN_ALL_METHODDEF
+    BUILTIN_ALL_METHODDEF_FR
     BUILTIN_ANY_METHODDEF
+    BUILTIN_ANY_METHODDEF_FR
     BUILTIN_ASCII_METHODDEF
     BUILTIN_BIN_METHODDEF
     {"breakpoint", _PyCFunction_CAST(builtin_breakpoint), METH_FASTCALL | METH_KEYWORDS, breakpoint_doc},
@@ -2973,25 +2978,35 @@ static PyMethodDef builtin_methods[] = {
     BUILTIN_HEX_METHODDEF
     BUILTIN_ID_METHODDEF
     BUILTIN_INPUT_METHODDEF
+    BUILTIN_INPUT_METHODDEF_FR
     BUILTIN_ISINSTANCE_METHODDEF
+    BUILTIN_ISINSTANCE_METHODDEF_FR
     BUILTIN_ISSUBCLASS_METHODDEF
+    BUILTIN_ISSUBCLASS_METHODDEF_FR
     {"iter", _PyCFunction_CAST(builtin_iter), METH_FASTCALL, iter_doc},
     BUILTIN_AITER_METHODDEF
     BUILTIN_LEN_METHODDEF
+    BUILTIN_LEN_METHODDEF_FR
     BUILTIN_LOCALS_METHODDEF
     {"max", _PyCFunction_CAST(builtin_max), METH_VARARGS | METH_KEYWORDS, max_doc},
     {"min", _PyCFunction_CAST(builtin_min), METH_VARARGS | METH_KEYWORDS, min_doc},
     {"next", _PyCFunction_CAST(builtin_next), METH_FASTCALL, next_doc},
+    {"suivant", _PyCFunction_CAST(builtin_next), METH_FASTCALL, next_doc},
     BUILTIN_ANEXT_METHODDEF
     BUILTIN_OCT_METHODDEF
     BUILTIN_ORD_METHODDEF
     BUILTIN_POW_METHODDEF
+    BUILTIN_POW_METHODDEF_FR
     BUILTIN_PRINT_METHODDEF
+    BUILTIN_PRINT_METHODDEF_FR
     BUILTIN_REPR_METHODDEF
     BUILTIN_ROUND_METHODDEF
+    BUILTIN_ROUND_METHODDEF_FR
     BUILTIN_SETATTR_METHODDEF
     BUILTIN_SORTED_METHODDEF
+    BUILTIN_SORTED_METHODDEF_FR
     BUILTIN_SUM_METHODDEF
+    BUILTIN_SUM_METHODDEF_FR
     {"vars",            builtin_vars,       METH_VARARGS, vars_doc},
     {NULL,              NULL},
 };
@@ -3053,22 +3068,30 @@ _PyBuiltin_Init(PyInterpreterState *interp)
     SETBUILTIN("bytearray",             &PyByteArray_Type);
     SETBUILTIN("bytes",                 &PyBytes_Type);
     SETBUILTIN("classmethod",           &PyClassMethod_Type);
+    SETBUILTIN("methodeclasse",         &PyClassMethod_Type); // french
     SETBUILTIN("complex",               &PyComplex_Type);
     SETBUILTIN("dict",                  &PyDict_Type);
     SETBUILTIN("enumerate",             &PyEnum_Type);
+    SETBUILTIN("enumere",               &PyEnum_Type); // french
     SETBUILTIN("filter",                &PyFilter_Type);
     SETBUILTIN("float",                 &PyFloat_Type);
     SETBUILTIN("frozenset",             &PyFrozenSet_Type);
     SETBUILTIN("property",              &PyProperty_Type);
+    SETBUILTIN("propriete",             &PyProperty_Type); // french
     SETBUILTIN("int",                   &PyLong_Type);
     SETBUILTIN("list",                  &PyList_Type);
+    SETBUILTIN("liste",                 &PyList_Type); // french
     SETBUILTIN("map",                   &PyMap_Type);
     SETBUILTIN("object",                &PyBaseObject_Type);
     SETBUILTIN("range",                 &PyRange_Type);
+    SETBUILTIN("intervalle",            &PyRange_Type); // french
     SETBUILTIN("reversed",              &PyReversed_Type);
+    SETBUILTIN("renverse",              &PyReversed_Type); // french
     SETBUILTIN("set",                   &PySet_Type);
+    SETBUILTIN("ensemble",              &PySet_Type); // french
     SETBUILTIN("slice",                 &PySlice_Type);
     SETBUILTIN("staticmethod",          &PyStaticMethod_Type);
+    SETBUILTIN("methodestatique",       &PyStaticMethod_Type); // french
     SETBUILTIN("str",                   &PyUnicode_Type);
     SETBUILTIN("super",                 &PySuper_Type);
     SETBUILTIN("tuple",                 &PyTuple_Type);

@@ -101,6 +101,9 @@ PyDoc_STRVAR(builtin_all__doc__,
 #define BUILTIN_ALL_METHODDEF    \
     {"all", (PyCFunction)builtin_all, METH_O, builtin_all__doc__},
 
+#define BUILTIN_ALL_METHODDEF_FR    \
+    {"tout", (PyCFunction)builtin_all, METH_O, builtin_all__doc__},
+
 PyDoc_STRVAR(builtin_any__doc__,
 "any($module, iterable, /)\n"
 "--\n"
@@ -111,6 +114,9 @@ PyDoc_STRVAR(builtin_any__doc__,
 
 #define BUILTIN_ANY_METHODDEF    \
     {"any", (PyCFunction)builtin_any, METH_O, builtin_any__doc__},
+
+#define BUILTIN_ANY_METHODDEF_FR    \
+    {"quelconque", (PyCFunction)builtin_any, METH_O, builtin_any__doc__},
 
 PyDoc_STRVAR(builtin_ascii__doc__,
 "ascii($module, obj, /)\n"
@@ -680,6 +686,9 @@ PyDoc_STRVAR(builtin_len__doc__,
 #define BUILTIN_LEN_METHODDEF    \
     {"len", (PyCFunction)builtin_len, METH_O, builtin_len__doc__},
 
+#define BUILTIN_LEN_METHODDEF_FR    \
+    {"taille", (PyCFunction)builtin_len, METH_O, builtin_len__doc__},
+
 PyDoc_STRVAR(builtin_locals__doc__,
 "locals($module, /)\n"
 "--\n"
@@ -735,6 +744,9 @@ PyDoc_STRVAR(builtin_pow__doc__,
 #define BUILTIN_POW_METHODDEF    \
     {"pow", _PyCFunction_CAST(builtin_pow), METH_FASTCALL|METH_KEYWORDS, builtin_pow__doc__},
 
+#define BUILTIN_POW_METHODDEF_FR    \
+    {"puissance", _PyCFunction_CAST(builtin_pow), METH_FASTCALL|METH_KEYWORDS, builtin_pow__doc__},
+
 static PyObject *
 builtin_pow_impl(PyObject *module, PyObject *base, PyObject *exp,
                  PyObject *mod);
@@ -785,6 +797,9 @@ PyDoc_STRVAR(builtin_print__doc__,
 
 #define BUILTIN_PRINT_METHODDEF    \
     {"print", _PyCFunction_CAST(builtin_print), METH_FASTCALL|METH_KEYWORDS, builtin_print__doc__},
+
+#define BUILTIN_PRINT_METHODDEF_FR    \
+    {"affiche", _PyCFunction_CAST(builtin_print), METH_FASTCALL|METH_KEYWORDS, builtin_print__doc__},
 
 static PyObject *
 builtin_print_impl(PyObject *module, PyObject *args, PyObject *sep,
@@ -857,6 +872,9 @@ PyDoc_STRVAR(builtin_input__doc__,
 #define BUILTIN_INPUT_METHODDEF    \
     {"input", _PyCFunction_CAST(builtin_input), METH_FASTCALL, builtin_input__doc__},
 
+#define BUILTIN_INPUT_METHODDEF_FR    \
+    {"saisis", _PyCFunction_CAST(builtin_input), METH_FASTCALL, builtin_input__doc__},
+
 static PyObject *
 builtin_input_impl(PyObject *module, PyObject *prompt);
 
@@ -903,6 +921,9 @@ PyDoc_STRVAR(builtin_round__doc__,
 #define BUILTIN_ROUND_METHODDEF    \
     {"round", _PyCFunction_CAST(builtin_round), METH_FASTCALL|METH_KEYWORDS, builtin_round__doc__},
 
+#define BUILTIN_ROUND_METHODDEF_FR    \
+    {"arrondis", _PyCFunction_CAST(builtin_round), METH_FASTCALL|METH_KEYWORDS, builtin_round__doc__},
+
 static PyObject *
 builtin_round_impl(PyObject *module, PyObject *number, PyObject *ndigits);
 
@@ -945,6 +966,9 @@ PyDoc_STRVAR(builtin_sum__doc__,
 
 #define BUILTIN_SUM_METHODDEF    \
     {"sum", _PyCFunction_CAST(builtin_sum), METH_FASTCALL|METH_KEYWORDS, builtin_sum__doc__},
+
+#define BUILTIN_SUM_METHODDEF_FR    \
+    {"somme", _PyCFunction_CAST(builtin_sum), METH_FASTCALL|METH_KEYWORDS, builtin_sum__doc__},
 
 static PyObject *
 builtin_sum_impl(PyObject *module, PyObject *iterable, PyObject *start);
@@ -989,6 +1013,9 @@ PyDoc_STRVAR(builtin_isinstance__doc__,
 #define BUILTIN_ISINSTANCE_METHODDEF    \
     {"isinstance", _PyCFunction_CAST(builtin_isinstance), METH_FASTCALL, builtin_isinstance__doc__},
 
+#define BUILTIN_ISINSTANCE_METHODDEF_FR    \
+    {"estinstance", _PyCFunction_CAST(builtin_isinstance), METH_FASTCALL, builtin_isinstance__doc__},
+
 static PyObject *
 builtin_isinstance_impl(PyObject *module, PyObject *obj,
                         PyObject *class_or_tuple);
@@ -1023,6 +1050,9 @@ PyDoc_STRVAR(builtin_issubclass__doc__,
 
 #define BUILTIN_ISSUBCLASS_METHODDEF    \
     {"issubclass", _PyCFunction_CAST(builtin_issubclass), METH_FASTCALL, builtin_issubclass__doc__},
+
+#define BUILTIN_ISSUBCLASS_METHODDEF_FR    \
+    {"estsousclasse", _PyCFunction_CAST(builtin_issubclass), METH_FASTCALL, builtin_issubclass__doc__},
 
 static PyObject *
 builtin_issubclass_impl(PyObject *module, PyObject *cls,
