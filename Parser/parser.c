@@ -22,6 +22,10 @@ static KeywordToken *reserved_keywords[] = {
         {"in", 648},
         {"or", 574},
         {"is", 582},
+        // french
+        {"et", 575},
+        {"ou", 574},
+        {"si", 639},
         {NULL, -1},
     },
     (KeywordToken[]) {
@@ -31,6 +35,9 @@ static KeywordToken *reserved_keywords[] = {
         {"try", 621},
         {"and", 575},
         {"not", 581},
+        // french
+        {"est", 582},
+        {"pas", 581},
         {NULL, -1},
     },
     (KeywordToken[]) {
@@ -41,6 +48,15 @@ static KeywordToken *reserved_keywords[] = {
         {"else", 642},
         {"None", 601},
         {"True", 600},
+        // french
+        {"avec", 612},
+        {"dans", 648},
+        {"Faux", 602},
+        {"leve", 522},
+        {"pour", 647},
+        {"Rien", 601},
+        {"sauf", 634},
+        {"Vrai", 600},
         {NULL, -1},
     },
     (KeywordToken[]) {
@@ -50,6 +66,14 @@ static KeywordToken *reserved_keywords[] = {
         {"class", 651},
         {"while", 644},
         {"False", 602},
+        // french
+        {"casse", 508},
+        {"comme", 637},
+        {"enfin", 630},
+        {"passe", 504},
+        {"rends", 573},
+        {"sinon", 642},
+        {"sinsi", 641},
         {NULL, -1},
     },
     (KeywordToken[]) {
@@ -59,15 +83,31 @@ static KeywordToken *reserved_keywords[] = {
         {"global", 523},
         {"except", 634},
         {"lambda", 586},
+        // french
+        {"classe", 651},
+        {"depuis", 572},
+        {"efface", 603},
+        {"essaie", 621},
+        {"global", 523},
+        {"lambda", 586},
         {NULL, -1},
     },
     (KeywordToken[]) {
         {"finally", 630},
+        // french
+        {"affirme", 526},
+        {"importe", 531},
+        {"definis", 649},
+        {"tantque", 644},
         {NULL, -1},
     },
     (KeywordToken[]) {
         {"continue", 509},
         {"nonlocal", 524},
+        // french
+        {"continue", 509},
+        {"nonlocal", 524},
+        {"retourne", 519},
         {NULL, -1},
     },
 };

@@ -133,30 +133,30 @@ RUN set -eux; \
 		ln -svT "$src" "/usr/local/bin/$dst"; \
 	done
 
-# if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
-ENV PYTHON_PIP_VERSION 22.3.1
-# https://github.com/docker-library/python/issues/365
-ENV PYTHON_SETUPTOOLS_VERSION 65.5.1
-# https://github.com/pypa/get-pip
-ENV PYTHON_GET_PIP_URL https://github.com/pypa/get-pip/raw/d5cb0afaf23b8520f1bbcfed521017b4a95f5c01/public/get-pip.py
-ENV PYTHON_GET_PIP_SHA256 394be00f13fa1b9aaa47e911bdb59a09c3b2986472130f30aa0bfaf7f3980637
+# # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
+# ENV PYTHON_PIP_VERSION 22.3.1
+# # https://github.com/docker-library/python/issues/365
+# ENV PYTHON_SETUPTOOLS_VERSION 65.5.1
+# # https://github.com/pypa/get-pip
+# ENV PYTHON_GET_PIP_URL https://github.com/pypa/get-pip/raw/d5cb0afaf23b8520f1bbcfed521017b4a95f5c01/public/get-pip.py
+# ENV PYTHON_GET_PIP_SHA256 394be00f13fa1b9aaa47e911bdb59a09c3b2986472130f30aa0bfaf7f3980637
 
-RUN set -eux; \
-	\
-	wget -O get-pip.py "$PYTHON_GET_PIP_URL"; \
-	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum -c -; \
-	\
-	export PYTHONDONTWRITEBYTECODE=1; \
-	\
-	python get-pip.py \
-		--disable-pip-version-check \
-		--no-cache-dir \
-		--no-compile \
-		"pip==$PYTHON_PIP_VERSION" \
-		"setuptools==$PYTHON_SETUPTOOLS_VERSION" \
-	; \
-	rm -f get-pip.py; \
-	\
-	pip --version
+# RUN set -eux; \
+# 	\
+# 	wget -O get-pip.py "$PYTHON_GET_PIP_URL"; \
+# 	echo "$PYTHON_GET_PIP_SHA256 *get-pip.py" | sha256sum -c -; \
+# 	\
+# 	export PYTHONDONTWRITEBYTECODE=1; \
+# 	\
+# 	python get-pip.py \
+# 		--disable-pip-version-check \
+# 		--no-cache-dir \
+# 		--no-compile \
+# 		"pip==$PYTHON_PIP_VERSION" \
+# 		"setuptools==$PYTHON_SETUPTOOLS_VERSION" \
+# 	; \
+# 	rm -f get-pip.py; \
+# 	\
+# 	pip --version
 
 CMD ["python3"]
