@@ -2370,6 +2370,11 @@ init_set_builtins_open(void)
         Py_DECREF(wrapper);
         goto error;
     }
+    /* Set builtins.ouvre */
+    if (PyObject_SetAttrString(bimod, "ouvre", wrapper) == -1) {
+        Py_DECREF(wrapper);
+        goto error;
+    }
     Py_DECREF(wrapper);
     goto done;
 
