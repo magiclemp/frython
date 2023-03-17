@@ -22,8 +22,8 @@
 /* End of includes for exit_sigint() */
 
 #define COPYRIGHT \
-    "Type \"help\", \"copyright\", \"credits\" or \"license\" " \
-    "for more information."
+    "Tape \"help\", \"copyright\", \"credits\" ou \"license\" " \
+    "pour plus d'informations."
 
 #ifdef __cplusplus
 extern "C" {
@@ -192,7 +192,7 @@ pymain_header(const PyConfig *config)
         return;
     }
 
-    fprintf(stderr, "Python %s on %s\n", Py_GetVersion(), Py_GetPlatform());
+    fprintf(stderr, "Frython %s sur %s\n", Py_GetVersion(), Py_GetPlatform());
     if (config->site_import) {
         fprintf(stderr, "%s\n", COPYRIGHT);
     }
