@@ -1,59 +1,103 @@
-# Frython - le language de programmation Python, mais en Français
+# Frython - c'est comme Python, mais en Français
 
 <p align="center">
   <img src="./logo.svg">
 </p>
 
+## Instructions de montage
+
+Sur Unix, Linux, BSD, macOS, et Cygwin
+
+```
+./configure
+make
+```
+
+Cela va créer un exécutable `frython`. Sur macOS et sur Cygwin, l'exécutable sera `frython.exe`; ailleurs cela sera juste `frython`.
+
 ## Exemple d'utilisation
 
-## Build Instructions
+Pour lancer l'interpréteur Frython, il vous suffit de faire 
 
-On Unix, Linux, BSD, macOS, and Cygwin::
+```
+./frython
+```
 
-    ./configure
-    make
-    make test
-    sudo make install
+Vous pouvez alors commencer à écrire votre premier code en Frython !
 
-This will install Python as ``python3``.
+```
+Frython 3.11.2 (heads/master-dirty:6779017766, Mar 28 2023, 12:10:04) [GCC 11.2.0] sur linux
+Tape "help", "copyright", "credits" ou "license" pour plus d'informations.
+>>> affiche("Coucou le monde")
+Coucou le monde
+```
 
-You can pass many options to the configure script; run ``./configure --help``
-to find out more.  On macOS case-insensitive file systems and on Cygwin,
-the executable is called ``python.exe``; elsewhere it's just ``python``.
+## Conversion des mots clés et des méthodes par défaut
 
-Building a complete Python installation requires the use of various
-additional third-party libraries, depending on your build platform and
-configure options.  Not all standard library modules are buildable or
-useable on all platforms.  Refer to the
-`Install dependencies <https://devguide.python.org/getting-started/setup-building.html#build-dependencies>`_
-section of the `Developer Guide`_ for current detailed information on
-dependencies for various Linux distributions and macOS.
+### Mots clés
 
-On macOS, there are additional configure and build options related
-to macOS framework and universal builds.  Refer to `Mac/README.rst
-<https://github.com/python/cpython/blob/main/Mac/README.rst>`_.
+| Anglais  | Français |
+|:---------|:---------|
+| as       | comme    |
+| if       | si       |
+| in       | dans     |
+| is       | est      |
+| or       | ou       |
+| and      | et       |
+| def      | definis  |
+| del      | efface   |
+| for      | pour     |
+| not      | pas      |
+| try      | essaie   |
+| elif     | sinsi    |
+| else     | sinon    |
+| from     | depuis   |
+| None     | Rien     |
+| pass     | passe    |
+| True     | Vrai     |
+| with     | avec     |
+| break    | casse    |
+| class    | classe   |
+| False    | Faux     |
+| raise    | leve     |
+| while    | tantque  |
+| yield    | rends    |
+| assert   | affirme  |
+| except   | sauf     |
+| global   | global   |
+| import   | importe  |
+| lambda   | lambda   |
+| return   | retourne |
+| finally  | enfin    |
+| continue | continue |
+| nonlocal | nonlocal |
 
-On Windows, see `PCbuild/readme.txt
-<https://github.com/python/cpython/blob/main/PCbuild/readme.txt>`_.
+### Méthodes
 
-If you wish, you can create a subdirectory and invoke configure from there.
-For example::
-
-    mkdir debug
-    cd debug
-    ../configure --with-pydebug
-    make
-    make test
-
-(This will fail if you *also* built at the top-level directory.  You should do
-a ``make clean`` at the top-level first.)
-
-To get an optimized build of Python, ``configure --enable-optimizations``
-before you run ``make``.  This sets the default make targets up to enable
-Profile Guided Optimization (PGO) and may be used to auto-enable Link Time
-Optimization (LTO) on some platforms.  For more details, see the sections
-below.
+| Anglais      | Français        |
+|:-------------|:----------------|
+| all          | tout            |
+| any          | quelconque      |
+| len          | taille          |
+| pow          | puissance       |
+| set          | ensemble        |
+| sum          | somme           |
+| list         | liste           |
+| next         | suivant         |
+| open         | ouvre           |
+| input        | saisis          |
+| print        | affiche         |
+| range        | intervalle      |
+| round        | arrondis        |
+| sorted       | trie            |
+| property     | propriete       |
+| reversed     | renverse        |
+| enumerate    | enumere         |
+| isinstance   | estinstance     |
+| issubclass   | estsousclasse   |
+| classmethod  | methodeclasse   |
+| staticmethod | methodestatique |
 
 ## Docker
 
-[docker](https://hub.docker.com/r/magiclemp/frython)
+Pour une grande facilité d'utilisation, Frython est aussi disponible en tant qu'image docker, ou [marcel cederom](https://github.com/brouberol/marcel#examples), sur la [page Docker Hub de Frython](https://hub.docker.com/r/magiclemp/frython).
