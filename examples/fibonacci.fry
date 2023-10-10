@@ -1,0 +1,12 @@
+definis fibonacci(n):
+    si n > 1:
+        retourne (fibonacci(n-1) + fibonacci(n-2))
+    sinon:
+        retourne n
+
+N = 10
+
+affiche(f"Les {N} premiers termes de la suite de Fibonacci sont:")
+
+pour k dans intervalle(N):
+    affiche(k, fibonacci(k))

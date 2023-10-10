@@ -1,0 +1,28 @@
+classe ChevalierQuiEnAGros:
+
+    definis __init__(soi, mots_compliqués_rencontrés):
+        soi.mots_compliqués_rencontrés = mots_compliqués_rencontrés
+
+    definis répondre_à(soi, mot_compliqué):
+        si (mot_compliqué pas dans soi.mots_compliqués_rencontrés) est pas Faux:
+            soi.mots_compliqués_rencontrés.append(mot_compliqué)
+            retourne "C'est pas faux"
+        sinon:
+            retourne "Je connais pas ce mot"
+
+
+mots_compliqués = [
+    "sinécure", "paradoxal", "obsolètes", "passe_triple", "divergente",
+    "insipide", "paroxysme", "dichotomie", "bon_escient", "belliqueux",
+    "dichotomie", "pauvre_hère", "idylle", "divergent"
+]
+
+perceval = ChevalierQuiEnAGros(["idylle"])
+
+pour mot_compliqué dans mots_compliqués:
+    affiche(f"{mot_compliqué:15s}", perceval.répondre_à(mot_compliqué))
+
+
+
+
+

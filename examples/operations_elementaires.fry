@@ -1,0 +1,35 @@
+# On importe la valeur de pi depuis la librairie standard math
+depuis math importe pi
+
+# On se donne la liste des entiers naturels de 1 à 10
+N = 10
+nombres = liste(intervalle(1, N+1))
+affiche(f"La liste des entiers naturels de 1 à {N} est:", nombres)
+
+# On effectue la somme des entiers naturels de 1 à 10
+somme_des_nombres = somme(nombres)
+affiche(f"La somme des entiers naturels de 1 à {N} est:", somme_des_nombres)
+
+# On effectue la somme des carrés des entiers naturels de 1 à 10
+carres = [puissance(k, 2) pour k dans nombres]
+somme_des_carres = somme(carres)
+affiche(f"La somme des carres des entiers naturels de 1 à {N} est:", somme_des_carres)
+
+# On calcule l'aire d'un cercle de rayon 2
+rayon = 2.
+aire_cercle = pi * puissance(rayon, 2)
+aire_cercle_arrondis = arrondis(aire_cercle)
+affiche(f"L'aire d'un cercle de rayon {rayon:.3f} est: {aire_cercle:.3f}")
+affiche(f"L'aire d'un cercle de rayon {rayon:.3f} est à peu prêt:", aire_cercle_arrondis)
+
+# On calcule la taille d'une liste
+ma_liste = [3, aire_cercle, 7.9, pi, -5.2, 42]
+taille_de_ma_liste = taille(ma_liste)
+affiche("La taille de ma liste est de:", taille_de_ma_liste)
+
+# On trie ou renverse les éléments d'une liste
+ma_liste_a_l_envers = liste(renverse(ma_liste))
+ma_liste_en_ordre = trie(ma_liste)
+affiche("Liste en désordre:", ma_liste)
+affiche("Liste à l'envers: ", ma_liste_a_l_envers)
+affiche("Liste en ordre:   ", ma_liste_en_ordre)
